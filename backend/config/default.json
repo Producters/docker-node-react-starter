@@ -11,7 +11,7 @@
         "password": null,
         "host": "db",
         "port": 5432,
-        "dialect": "postgres"
+        "dialect": "mysql"
     },
 
     "loggers": {
