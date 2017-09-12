@@ -8,9 +8,9 @@
     "database": {
         "username": "appuser",
         "database": "appdb",
-        "password": null,
+        "password": "appuser",
         "host": "db",
-        "port": 5432,
+        "port": 3306,
         "dialect": "mysql"
     },
 

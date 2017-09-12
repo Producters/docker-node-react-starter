@@ -3,14 +3,15 @@ services:
   dbdata:
     image: mysql:5.7.19
     command: "true"
-
+    volumes:
+      - /media/data/db_data/mysql:/var/lib/mysql
   db:
     image: mysql:5.7.19
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     volumes_from:
       - dbdata
             
