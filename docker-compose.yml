@@ -1,13 +1,15 @@
 version: '2'
 services:
     dbdata:
-        image: postgres:9.6
+        image: mysql:5.7.19
         command: "true"
 
     db:
-        image: postgres:9.6
+        image: mysql:5.7.19
         environment:
-            POSTGRES_DB: ${POSTGRES_DB}
-            POSTGRES_USER: ${POSTGRES_USER}
+          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+          MYSQL_DATABASE: ${MYSQL_DATABASE}
+          MYSQL_USER: ${MYSQL_USER}
+          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
         volumes_from:
             - dbdata

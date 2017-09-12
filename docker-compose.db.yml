@@ -1,11 +1,13 @@
 version: '2'
 services:
-    dbclient:
-        image: postgres:9.6
-        depends_on:
-            - db
-        environment:
-            POSTGRES_DB: ${POSTGRES_DB}
-            POSTGRES_USER: ${POSTGRES_USER}
-        volumes:
-            - "./backups:/backups"
+  dbclient:
+    image: mysql:5.7.19
+    depends_on:
+      - db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - "./backups:/backups"
