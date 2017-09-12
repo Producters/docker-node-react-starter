@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 import express from 'express';
 import models from '../models';
-import logger from '../logger'
+import logger from '../logger';
 
 const router = express.Router();
 
@@ -17,7 +17,17 @@ router.get('/users/', function(req, res){
     });
 });
 // create
+router.post('/users/', function(req, res){
+  logger.info('creating user', JSON.stringify(req.body));
 
+  models.users.create(req.body)
+    .then(function(user){
+      res.status(201).json(user.toJSON());
+    }).catch(function(e){
+      logger.error('error creating user', e);
+      res.status(500).json();
+    });
+});
 // delete
 
 export default router;
