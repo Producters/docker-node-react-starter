@@ -8,10 +8,10 @@
     "database": {
         "username": "appuser",
         "database": "appdb",
-        "password": null,
+        "password": "appuser",
         "host": "db",
-        "port": 5432,
-        "dialect": "postgres"
+        "port": 3306,
+        "dialect": "mysql"
     },
 
     "loggers": {

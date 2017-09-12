@@ -1,5 +1,5 @@
 # production dockerfile
-FROM node:5.10
+FROM mhart/alpine-node:latest
 
 # add code
 COPY . /backend

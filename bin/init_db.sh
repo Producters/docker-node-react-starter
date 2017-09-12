@@ -10,9 +10,9 @@ if  [ $(docker-compose -f docker-compose.yml -f $DOCKER_INIT_DB_CONFIG ps | grep
     echo "initializing database"
     docker-compose -f docker-compose.yml -f $DOCKER_INIT_DB_CONFIG up -d db
     DB_CONTAINER_ID=$(docker-compose -f docker-compose.yml -f $DOCKER_INIT_DB_CONFIG ps -q db)
-    for i in {30..0}; do
-        echo "waiting for postgres to finish initializing..."
-        if [ $(docker logs $DB_CONTAINER_ID 2>&1 | grep "database system is ready to accept connections" | wc -l) == 1 ]; then
+    for i in {45..0}; do
+        echo "waiting for mysql to finish initializing..."
+        if [ $(docker logs $DB_CONTAINER_ID 2>&1 | grep "ready for connections" | wc -l) == 1 ]; then
             docker-compose -f docker-compose.yml -f $DOCKER_INIT_DB_CONFIG stop db
             echo "db initialized"
             exit 0
