@@ -3,8 +3,8 @@ services:
     dbtest:
         image: postgres:9.5
         environment:
-            POSTGRES_DB: testdb
-            POSTGRES_USER: testuser
+            MYSQL_DATABASE: testdb
+            MYSQL_USER: testuser
     selenium:
         image: selenium/standalone-chrome-debug:2.53.0
         ports: 

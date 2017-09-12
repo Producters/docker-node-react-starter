@@ -14,11 +14,12 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "fs-extra": "^2.1.2",
+    "minimatch": "^3.0.4",
+    "mysql2": "^1.4.2",
     "nconf": "^0.8.4",
-    "pg": "^6.1.4",
     "pug": "^2.0.0-beta11",
-    "sequelize": "^3.30.2",
-    "sequelize-cli": "^2.6.0",
+    "sequelize": "^4.8.3",
+    "sequelize-cli": "^2.8.0",
     "winston": "^2.3.1"
   },
   "devDependencies": {

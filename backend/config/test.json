@@ -7,6 +7,6 @@
         "password": null,
         "host": "dbtest",
         "port": 5432,
-        "dialect": "postgres"
+        "dialect": "mysql"
     }
 }
