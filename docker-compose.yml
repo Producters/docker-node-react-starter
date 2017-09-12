@@ -1,15 +1,16 @@
 version: '2'
 services:
-    dbdata:
-        image: mysql:5.7.19
-        command: "true"
+  dbdata:
+    image: mysql:5.7.19
+    command: "true"
 
-    db:
-        image: mysql:5.7.19
-        environment:
-          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-          MYSQL_DATABASE: ${MYSQL_DATABASE}
-          MYSQL_USER: ${MYSQL_USER}
-          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-        volumes_from:
-            - dbdata
+  db:
+    image: mysql:5.7.19
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes_from:
+      - dbdata
+            
